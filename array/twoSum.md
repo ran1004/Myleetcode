@@ -14,6 +14,25 @@
 
 
 ```cpp
+class Solution {                                                                
+public:                                                                         
+    vector<int> twoSum(vector<int>& nums,int traget) {                          
+        vector<int> arr(2, 0);                                                  
+        map<int,int> hash;                                                      
+        for(int i=0; i<nums.size(); i++) {                                      
+            if(hash.count(traget-nums[i])) {                                    
+                arr[0] = hash[traget-nums[i]], arr[1] = i;                      
+                return arr;                                                     
+            }                                                                   
+            hash[nums[i]] = i;                                                  
+                                                                                
+        }                                                                       
+        return arr;                                                             
+    }                                                                           
+};           
+
+```
+```cpp
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
